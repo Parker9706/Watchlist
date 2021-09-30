@@ -11,11 +11,9 @@ const incrementDrama = title => {
     body: JSON.stringify(body)
   })
   .then(resp => resp.json())
-  .then((data) => {
-    console.log('Look here: ', data);
-    })
   .then(() => {
-   props.history.push('/');
+    <Redirect to="/" />
+  //  props.history.push('/');
     })
   .catch(err => console.log('incrementDrama fetch /api/increment ERROR: ', err));
 }

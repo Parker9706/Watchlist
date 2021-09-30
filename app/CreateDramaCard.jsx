@@ -49,6 +49,8 @@ const CreateDramaCard = props => {
     }
 
 
+
+
   // useEffect to clear titleError when `title` is changed
   useEffect(()=>{
     setTitleError(null);
@@ -57,7 +59,7 @@ const CreateDramaCard = props => {
   return (
 
     <section className="createDramaContainer">
-    <img src="https://fontmeme.com/permalink/210930/13b29ff3a42c76acc399b353af7af2d6.png" alt="watchlist-logo" id="header" href="localhost:8080/"></img>
+    <img src="https://fontmeme.com/permalink/210930/13b29ff3a42c76acc399b353af7af2d6.png" alt="watchlist-logo" id="header" ahref="localhost:8080/"></img>
       <header className="pageHeader2">
         <h2 id="add">Add A Program</h2>
         <Link to="/" className="backLink">
@@ -69,7 +71,7 @@ const CreateDramaCard = props => {
       <article>
         <div className="createDramaFields">
           <label htmlFor="title">Title </label>
-          <input className="title" name="title" placeholder="Crash Landing On You" value={title} onChange={titleOnChange} />
+          <input className="title" name="title" placeholder="Record Of Youth" value={title} onChange={titleOnChange} />
           {titleError ? (<span className="errorMsg">{titleError}</span>) : null}
         </div>
         <div className="createDramaFields">

@@ -126,6 +126,7 @@ body {
 }
 
 .deleteBtn {
+  font-weight: bold;
   color: rgb(92, 92, 92);
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
@@ -133,6 +134,8 @@ body {
   background: none;
   position: relative;
   padding-top: 20px;
+  bottom: 45px;
+  left: 155px;
   /* left: 155px;
   top: 30px; */
   opacity: 0.2;
