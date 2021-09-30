@@ -17,5 +17,9 @@ router.post('/deleteDrama',
   (req, res) => res.status(200).json('Drama deleted from watchlist successfully')
 );
 
+router.post('/increment',
+controller.increment,
+(req, res) => res.status(200).json('Incremented Drama by 1 Digit!')
+);
 
 module.exports = router;

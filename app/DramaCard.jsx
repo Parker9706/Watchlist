@@ -1,5 +1,6 @@
 import React from 'react';
 import deleteDrama from './DeleteDramaCard.jsx';
+import incrementDrama from './IncrementDrama.jsx';
 
 
 const DramaCard = ({
@@ -19,6 +20,8 @@ const DramaCard = ({
 
      return monthOptions[month-1] + ' ' + (dateCopy[8] + dateCopy[9]) + ', ' + dateCopy.slice(0, 4);
   }
+
+
   return (
     <article>
     <div className="dramaCard">
@@ -27,12 +30,13 @@ const DramaCard = ({
         <li> <h3 className="dramaHeadContainer">{title}</h3></li>
         <li className="dramaDetail" id="airdate">{convertDate(air_date)}</li>
         <li className="dramaDetail" id="synopsis">{synopsis}</li>
-        <li className="dramaDetail" id="current">Current Episode: {current_episode}</li>
+        <li className="dramaDetail" id="current">Current Episode: {current_episode}<button type="button" className="incrementBtn" onClick={() => { incrementDrama(title) }}>+</button></li>
         <li className="dramaDetail" id="total">Total Episodes: {total_episodes}</li>
 
       </ul>
-      <button type="button" className="deleteBtn" onClick={() => { deleteDrama(title) }}>X</button>
+
       </div>
+      <button type="button" className="deleteBtn" onClick={() => { deleteDrama(title) }}>X</button>
     </article>
   );
 };

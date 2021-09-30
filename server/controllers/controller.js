@@ -58,7 +58,6 @@ controller.addDrama = async (req, res, next) => {
 };
 
 controller.deleteDrama = async (req, res, next) => {
-  console.log('Body of request: ', req.body)
   const deleteQuery =
   `DELETE FROM drama_list WHERE title='${req.body.title}';`;
   console.log('Query: ', deleteQuery)
@@ -73,5 +72,23 @@ controller.deleteDrama = async (req, res, next) => {
     });
   }
 };
+
+controller.increment = async (req, res, next) => {
+  console.log('Made it to the controller!')
+  console.log('Body of  increment: ', req.body)
+  const incrementQuery = `UPDATE drama_list SET current_episode=current_episode+1 WHERE title='${req.body.title}';`;
+  console.log('Query: ', incrementQuery)
+  try {
+    const result = await db.query(incrementQuery);
+    next();
+  } catch (error) {
+    return next({
+      log: `Error in increment middleware: ${error}`,
+      status: 500,
+      message: { error: `An error occured. Could not increment the drama card`}
+    });
+  }
+};
+
 
 module.exports = controller;

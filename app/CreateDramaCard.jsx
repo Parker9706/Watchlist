@@ -56,10 +56,10 @@ const CreateDramaCard = props => {
 
   return (
 
-    <section className="mainSection createDramaContainer">
+    <section className="createDramaContainer">
     <img src="https://fontmeme.com/permalink/210930/13b29ff3a42c76acc399b353af7af2d6.png" alt="watchlist-logo" id="header" href="localhost:8080/"></img>
-      <header className="pageHeader">
-        <h2>Add A Drama</h2>
+      <header className="pageHeader2">
+        <h2 id="add">Add A Program</h2>
         <Link to="/" className="backLink">
           <button type="button" className="backBtn">
               Back to your watchlist
@@ -67,28 +67,28 @@ const CreateDramaCard = props => {
         </Link>
       </header>
       <article>
-        <h3>Enter details for the drama</h3>
         <div className="createDramaFields">
-          <label htmlFor="title">Title: </label>
-          <input name="title" placeholder="Crash Landing On You" value={title} onChange={titleOnChange} />
+          <label htmlFor="title">Title </label>
+          <input className="title" name="title" placeholder="Crash Landing On You" value={title} onChange={titleOnChange} />
           {titleError ? (<span className="errorMsg">{titleError}</span>) : null}
         </div>
         <div className="createDramaFields">
-          <label htmlFor="airdate">Air Date: </label>
-          <input name="airdate" placeholder="YYYY-MM-DD" value={air_date} onChange={dateOnChange} />
+          <label htmlFor="airdate">Air Date </label>
+          <input className="airdate" name="airdate" placeholder="YYYY-MM-DD" value={air_date} onChange={dateOnChange} />
         </div>
         <div className="createDramaFields">
-          <label htmlFor="synopsis">Synopsis: </label>
-          <input name="synopsis" placeholder="Type up a brief summary" value={synopsis} onChange={synopsisOnChange} />
+          <label htmlFor="synopsis">Plot </label>
+          <textarea className="plot" name="synopsis" placeholder="Type up a brief summary" value={synopsis} onChange={synopsisOnChange} />
         </div>
         <div className="createDramaFields">
-          <label htmlFor="currentEpisode">Current Episode: </label>
-          <input name="currentEpisode" placeholder="1" value={current_episode} onChange={currentepisodeOnChange} />
+          <label htmlFor="currentEpisode">Current Episode </label>
+          <input className="currentEps" name="currentEpisode" placeholder="1" value={current_episode} onChange={currentepisodeOnChange} />
         </div>
         <div className="createDramaFields">
-          <label htmlFor="totalEpisodes">Total Episodes: </label>
-          <input name="totalEpisodes" placeholder="100" value={total_episodes} onChange={totalEpisodesOnChange} />
+          <label htmlFor="totalEpisodes">Total Episodes </label>
+          <input className="totalEps" name="totalEpisodes" placeholder="100" value={total_episodes} onChange={totalEpisodesOnChange} />
         </div>
+        <div id="formButtons">
         <div className="createCharButtonContainer">
           <Link to="/" className="backLink">
             <button type="button" className="cancelBtn">
@@ -96,7 +96,9 @@ const CreateDramaCard = props => {
             </button>
           </Link>
           <button type="button" className="saveBtn" onClick={saveDrama}>Save</button>
-        </div>
+          </div>
+          </div>
+
       </article>
     </section>
   );

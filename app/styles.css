@@ -25,7 +25,7 @@ body {
   max-width: 150px;
   max-height: 212.5px;
   justify-content: start;
-  border-radius: 4%;
+  border-radius: 8px;
 }
 
 #header {
@@ -55,6 +55,8 @@ body {
 }
 
 .dramaCard {
+  color:rgb(53, 53, 53);
+  height: 420px;
   min-width: 180px;
   opacity: 0.9;
   background-color: #eff3f5;
@@ -62,9 +64,14 @@ body {
   /* margin-left: 15px;
   margin-right: 15px; */
   /* padding: 10px 10px; */
-  border-radius: 4%;
-  box-shadow: 0px 0px 10px 1px #726c6c;
+  border-radius: 15px;
+  opacity: 0.95;
+
 }
+.dramaCard:hover {
+  box-shadow: 10px 10px 54px -6px rgba(147, 146, 146, 0.75);
+  opacity: 1;
+  }
 
 .dramaHeadContainer {
   font-size: 12px;
@@ -72,6 +79,7 @@ body {
 }
 
 .dramaDetails {
+
   display: inline;
   text-align: center;
   font-size: 10px;
@@ -85,6 +93,10 @@ body {
 #current, #total {
   margin-top: 1px;
   font-size: 9px;
+}
+
+#synopsis {
+  padding: 5px;
 }
 
 .dramaDetail {
@@ -114,23 +126,136 @@ body {
 }
 
 .deleteBtn {
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  background: transparent;
+  color: rgb(92, 92, 92);
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
   text-shadow: 0px 0px 0px transparent;
+  background: none;
+  position: relative;
+  padding-top: 20px;
+  /* left: 155px;
+  top: 30px; */
+  opacity: 0.2;
 }
 
 .deleteBtn:hover {
-  border: 0.5px solid white;
-  border-radius: 40%;
+  /* border: 1px solid rgb(92, 92, 92);
+  border-radius: 10px; */
+  opacity: 0.75;
+}
+
+.incrementBtn {
+  color: rgb(92, 92, 92);
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+  background: none;
+  position: relative;
+  /* padding-top: 20px; */
+  /* left: 155px;
+  top: 30px; */
+  opacity: 0.2;
+}
+
+.incrementBtn:hover {
+  opacity: 0.75;
+
 }
 
 /* Create Card Styles */
 
-.pageHeader {
+.createDramaContainer {
+
+}
+
+.title {
+  background-color: rgb(247, 247, 247);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+   border-radius: 20px;
+   border: 1px solid #4f5355;
+   color: #4f5355;
+   width: 250px;
+   height: 20px;
+   padding-left: 10px;
+}
+
+.airdate {
+  background-color: rgb(247, 247, 247);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+   border-radius: 20px;
+   border: 1px solid #4f5355;
+   color: #4f5355;
+   width: 110px;
+   height: 20px;
+   padding-left: 10px;
+}
+
+.plot {
+  font-family: 'Lato', sans-serif;
+
+  background-color: rgb(247, 247, 247);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+   border-radius: 20px;
+   border: 1px solid #4f5355;
+   color: #4f5355;
+   width: 400px;;
+   height: 90px;
+   padding:  10px 10px 10px 10px;
+}
+
+.currentEps {
+  background-color: rgb(247, 247, 247);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+   border-radius: 20px;
+   border: 1px solid #4f5355;
+   color: #4f5355;
+   width: 30px;
+   height: 20px;
+   padding-left: 10px;
+}
+
+.totalEps {
+  background-color: rgb(247, 247, 247);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+   border-radius: 20px;
+   border: 1px solid #4f5355;
+   color: #4f5355;
+   width: 30px;
+   height: 20px;
+   padding-left: 10px;
+}
+
+.createDramaFields {
+  font-size: 15px;
+  font-style: italic;
+  color: white;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+
+
+.pageHeader2 {
   /* add a drama */
+}
+
+#formButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#add {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 20px;
 }
 
 .backBtn {
@@ -152,11 +277,35 @@ body {
 }
 
 .saveBtn {
+  margin-left: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  color: white;
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
 
+.saveBtn:hover {
+  border: 0.5px solid white;
+  border-radius: 8%;
 }
 
 .cancelBtn {
+  margin-right: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  color: white;
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
 
+.cancelBtn:hover {
+  border: 0.5px solid white;
+  border-radius: 8%;
 }
 /*
   MEDIA QUERIES
