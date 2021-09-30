@@ -28,7 +28,7 @@ class Watchlist extends Component {
   render() {
     if (!this.state.fetchedList) return (
       <div>
-        <h1>Loading watchlist, please wait...</h1>
+        <h1>Loading Watchlist, please wait...💁‍♂️</h1>
       </div>
     );
 
@@ -37,7 +37,7 @@ class Watchlist extends Component {
     if (!watchlist) return null;
 
     if (!watchlist.length) return (
-      <div>Sorry, no dramas have been found</div>
+      <div>Sorry, no dramas have been found 😞</div>
     );
 
     const dramaElems = watchlist.map((char, i) => {
@@ -52,13 +52,13 @@ class Watchlist extends Component {
     return (
       <section className="mainSection">
         <header className="pageHeader">
-          <h2>Dramas</h2>
+          <img src="https://fontmeme.com/permalink/210930/13b29ff3a42c76acc399b353af7af2d6.png" alt="watchlist-logo" id="header" href="localhost:8080/"></img>
           <Link to={'/create'}>
             <button
               type="button"
-              className="btnSecondary"
+              className="addDramaBtn"
             >
-              Add Drama
+              +Program
             </button>
           </Link>
         </header>

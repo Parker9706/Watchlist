@@ -20,17 +20,19 @@ const DramaCard = ({
      return monthOptions[month-1] + ' ' + (dateCopy[8] + dateCopy[9]) + ', ' + dateCopy.slice(0, 4);
   }
   return (
-    <article className="drama dramaCard">
-      <div className="dramaHeadContainer">
-        <h3 className="dramaTitle">{title}</h3>
-      </div>
+    <article>
+    <div className="dramaCard">
       <ul className="dramaDetails">
-        <li className="dramaDetail">Original Air Date: {convertDate(air_date)}</li>
-        <li className="dramaDetail">Plot: {synopsis}</li>
-        <li className="dramaDetail">Current Episode: {current_episode}</li>
-        <li className="dramaDetail">Total Episodes: {total_episodes}</li>
+        <li><img src="https://m.media-amazon.com/images/M/MV5BNTgxZmVmYTItOTY1MC00MGQwLTg5NTgtMDliMGMxMWRkODc4XkEyXkFqcGdeQXVyNDU4MDQ0MjM@._V1_.jpg" alt="zico" className="poster"></img></li>
+        <li> <h3 className="dramaHeadContainer">{title}</h3></li>
+        <li className="dramaDetail" id="airdate">{convertDate(air_date)}</li>
+        <li className="dramaDetail" id="synopsis">{synopsis}</li>
+        <li className="dramaDetail" id="current">Current Episode: {current_episode}</li>
+        <li className="dramaDetail" id="total">Total Episodes: {total_episodes}</li>
+
       </ul>
-      <button type="button" className="deletebtn" onClick={() => { deleteDrama(title) }}>Delete</button>
+      <button type="button" className="deleteBtn" onClick={() => { deleteDrama(title) }}>X</button>
+      </div>
     </article>
   );
 };

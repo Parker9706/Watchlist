@@ -55,45 +55,47 @@ const CreateDramaCard = props => {
   }, [title]);
 
   return (
-    <section className="mainSection createCharContainer">
+
+    <section className="mainSection createDramaContainer">
+    <img src="https://fontmeme.com/permalink/210930/13b29ff3a42c76acc399b353af7af2d6.png" alt="watchlist-logo" id="header" href="localhost:8080/"></img>
       <header className="pageHeader">
         <h2>Add A Drama</h2>
         <Link to="/" className="backLink">
-          <button type="button" className="btnSecondary">
+          <button type="button" className="backBtn">
               Back to your watchlist
           </button>
         </Link>
       </header>
-      <article className="card createChar">
+      <article>
         <h3>Enter details for the drama</h3>
-        <div className="createCharFields">
+        <div className="createDramaFields">
           <label htmlFor="title">Title: </label>
           <input name="title" placeholder="Crash Landing On You" value={title} onChange={titleOnChange} />
           {titleError ? (<span className="errorMsg">{titleError}</span>) : null}
         </div>
-        <div className="createCharFields">
+        <div className="createDramaFields">
           <label htmlFor="airdate">Air Date: </label>
-          <input name="airdate" placeholder="2021-01-01" value={air_date} onChange={dateOnChange} />
+          <input name="airdate" placeholder="YYYY-MM-DD" value={air_date} onChange={dateOnChange} />
         </div>
-        <div className="createCharFields">
+        <div className="createDramaFields">
           <label htmlFor="synopsis">Synopsis: </label>
           <input name="synopsis" placeholder="Type up a brief summary" value={synopsis} onChange={synopsisOnChange} />
         </div>
-        <div className="createCharFields">
+        <div className="createDramaFields">
           <label htmlFor="currentEpisode">Current Episode: </label>
           <input name="currentEpisode" placeholder="1" value={current_episode} onChange={currentepisodeOnChange} />
         </div>
-        <div className="createCharFields">
+        <div className="createDramaFields">
           <label htmlFor="totalEpisodes">Total Episodes: </label>
           <input name="totalEpisodes" placeholder="100" value={total_episodes} onChange={totalEpisodesOnChange} />
         </div>
         <div className="createCharButtonContainer">
           <Link to="/" className="backLink">
-            <button type="button" className="btnSecondary">
+            <button type="button" className="cancelBtn">
               Cancel
             </button>
           </Link>
-          <button type="button" className="btnMain" onClick={saveDrama}>Save</button>
+          <button type="button" className="saveBtn" onClick={saveDrama}>Save</button>
         </div>
       </article>
     </section>
