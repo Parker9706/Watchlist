@@ -8,17 +8,16 @@ class Watchlist extends Component {
     super(props);
     this.state = {
       fetchedList: false,
-      watchlist: [],
+      watchlist: {},
     };
   }
 
   componentDidMount() {
-    fetch('/api')
+    fetch('https://api.themoviedb.org/3/discover/tv?api_key=f64258c402a8bd4daf4d77c6980e0692&with_genres=18&with_original_language=ko')
       .then(res => res.json())
-      .then((watchlist) => {
-        if (!Array.isArray(watchlist)) watchlist = [];
+      .then((res) => {
         return this.setState({
-          watchlist,
+          res,
           fetchedList: true
         });
       })
@@ -28,6 +27,7 @@ class Watchlist extends Component {
   render() {
     if (!this.state.fetchedList) return (
       <div>
+        <h2>this shit no work</h2>
         <h1>Loading Watchlist, please wait...💁‍♂️</h1>
       </div>
     );
@@ -36,31 +36,20 @@ class Watchlist extends Component {
 
     if (!watchlist) return null;
 
-    if (!watchlist.length) return (
-      <div>Sorry, no dramas have been found 😞</div>
-    );
+    // if (!watchlist.length) return (
+    //   <div>Sorry, no dramas have been found 😞</div>
+    // ); 
 
-    const dramaElems = watchlist.map((char, i) => {
+    // const dramaElems = watchlist.map((char, i) => {
       return (
-        <DramaCard
-          key={i}
-          info={char}
-        />
+        <DramaCard />
       );
-    });
+    // });
 
     return (
       <section className="mainSection">
         <header className="pageHeader">
           <img src="https://fontmeme.com/permalink/210930/13b29ff3a42c76acc399b353af7af2d6.png" alt="watchlist-logo" id="header" href="localhost:8080/"></img>
-          <Link to={'/create'}>
-            <button
-              type="button"
-              className="addDramaBtn"
-            >
-              +Program
-            </button>
-          </Link>
         </header>
         <div className="dramaContainer">
           {dramaElems}
