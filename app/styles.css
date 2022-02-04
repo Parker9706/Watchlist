@@ -6,7 +6,7 @@ html {
   box-sizing: border-box;
 
   font-family: 'Lato', sans-serif;
-  background-color: rgb(31, 30, 30);
+  background-color: rgb(236, 226, 226);
 }
 
 
@@ -18,7 +18,9 @@ body {
 
 
 
-
+#main-title {
+  color: rgb(44, 41, 41);
+}
 
 
 .poster {
